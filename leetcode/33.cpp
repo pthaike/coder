@@ -20,6 +20,7 @@ public:
 };
 
 */
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
@@ -28,10 +29,23 @@ using namespace std;
 
 int search(vector<int>& nums, int target)
 {
-    return 0;
+    for(int i = 0; i < nums.size(); i ++){
+        if(nums[i] == target){
+            return i;
+        }
+    }
+    return -1;
 }
 
 int main(void)
 {
+    vector<int> nums;
+    int n, a;
+    scanf("%d", &n);
+    for(;n > 0; n --){
+        scanf("%d", &a);
+        nums.push_back(a);
+    }
     return 0;
 }
+*/
