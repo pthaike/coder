@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1464689562 source:d:\code\coder\hiho\hiho99.cpp
+	<stdio.h>
+	<queue>
+
+1464920330 source:d:\code\coder\hiho\hiho100.cpp
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<queue>
+	<math.h>
+
+1464921220 source:d:\code\coder\hiho\hiho1.cpp
+	<stdio.h>
+	<stdlib.h>
+

@@ -11,7 +11,7 @@ Example: 19 is a happy number
 12 + 02 + 02 = 1
 
 */
-
+/*
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
