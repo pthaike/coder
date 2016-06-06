@@ -31,7 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="hiho100.cpp" />
+		<Unit filename="101.cpp" />
+		<Unit filename="hiho.cbp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

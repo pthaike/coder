@@ -1,5 +1,7 @@
 /**
 http://hihocoder.com/contest/hiho100/problem/1
+八数码问题
+
 输入
 
 第1行：1个正整数t，表示数据组数。1≤t≤8。
