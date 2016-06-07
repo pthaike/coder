@@ -50,35 +50,133 @@ struct _node
     int y;
 };
 
+struct _node * columnHead[MAXLEN+1];
+struct _node * node[MAXLEN*MAXLEN];
+int id[MAXLEN][MAXLEN];
+int m,n;
+
 struct _node * init(int m, int n)
 {
-    struct _node * head = {left:head, right:head, up:head, down:head, x:0, y:0};
+    //构建表头
+    struct _node * head = {left:head, right:head, up:head, down:head, x:-1, y:-1};
     struct _node * pre = head;
-    for(int i = 0; i < m; i++)
+
+    for(int i = 0; i < n; i++)
     {
         struct _node * p = {x:0, y:i};
-        p.down = p;
-        p.up = p;
-        p.left = pre;
-        p.right = pre.right;
-        pre.right = p;
-
+        columnHead[i] = p;
+        p->down = p;
+        p->up = p;
+        p->left = pre;
+        p->right = pre->right;
+        pre->right->left = p;
+        pre->right = p;
+        pre = p;
     }
+    //初始化并编号
+    int cnt = 0;
+
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(matrix[i][j] == 1)
+            {
+                id[i][j] = cnt;
+                node[cnt++] = {left:node[cnt], right:node[cnt], up:node[cnt], down:node[cnt], x:i, y:j};
+            }
+        }
+    }
+    //纵向添加结点
+    struct _node * p;
+    for(int i = 0; i < m; i++)
+    {
+        pre = columnHead[i];
+        for(int j = 0; j < n; j++)
+        {
+            if(matrix[i][j] == 1)
+            {
+                p = node[id[i][j]];
+                p.down = pre.down;
+                p.up = pre;
+                pre.down.up = p;
+                pre.down = p;
+                pre = p;
+            }
+        }
+    }
+    //横向添加结点
+    for(int i = 0; i < n; i++)
+    {
+        pre = NULL;
+        for(int j = 0; j < m; j++)
+        {
+            if(matrix[j][i] == 1)
+            {
+                if(pre == NULL)
+                    pre = node[id[j][i]];
+                else
+                {
+                    p = node[id[j][i]];
+                    p.left = pre;
+                    p.right = pre.right;
+                    pre.right.left = p;
+                    pre.right = p;
+                    pre = p;
+                }
+            }
+        }
+    }
+
     return head;
 }
-
-void remove()
+/**
+删除col列
+*/
+void remove(int col)
 {
-
+    struct _node * p = columnHead[col];
+    p.right.left = p.left;
+    p.left.right = p.right;
+    struct _node *p1 = p.down;
+    while(p1 != p)
+    {
+        //获取该列下的每个结点
+        struct _node * p2 = p1.right;
+        while(p2 != p1)
+        {
+            p2.down.up = p2.up;
+            p2.up.down = p2.down;
+            p2 = p2.right;
+        }
+        p1 = p1.down;
+    }
+}
+/**
+回复col列
+*/
+void resume(int col)
+{
+    struct _node * p = columnHead[col];
+    p.right.left = p;
+    p.left.right = p;
+    struct _node * p1 = p.down;
+    while(p1 != p)
+    {
+        struct _node * p2 = p1.right;
+        while(p2 != p1)
+        {
+            p2.up.down = p2;
+            p2.down.up = p2;
+            p2 = p2.right;
+        }
+        p1 = p1.down;
+    }
 }
 
-void resume()
+bool dance(int m, int n)
 {
-
-}
-
-bool dance()
-{
+    struct _node * head = init(m,n);
     return false;
 }
 
