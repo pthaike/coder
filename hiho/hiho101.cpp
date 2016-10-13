@@ -58,12 +58,12 @@ int m,n;
 struct _node * init(int m, int n)
 {
     //构建表头
-    struct _node * head = {left:head, right:head, up:head, down:head, x:-1, y:-1};
+struct _node * head = {left:head, right:head, up:head, down:head, x:-1, y:-1};
     struct _node * pre = head;
 
     for(int i = 0; i < n; i++)
     {
-        struct _node * p = {x:0, y:i};
+struct _node * p = {x:0, y:i};
         columnHead[i] = p;
         p->down = p;
         p->up = p;
