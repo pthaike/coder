@@ -24,17 +24,24 @@ return its level order traversal as:
 #include <queue>
 #include <vector>
 #include <iostream>
+#include <stack>
 
 using namespace std;
 
+  struct TreeNode {
+    int val;
+     TreeNode *left;
+     TreeNode *right;
+     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+  };
 
-vector<vector<int>> levelOrder(TreeNode* root)
+vector<vector<int> > levelOrder(TreeNode* root)
 {
     queue<TreeNode*> q;
     TreeNode* flag, *tmpflag, *p;
     q.push(root);
     flag = root;
-    vector<vector<int>> res;
+    vector<vector<int> > res;
     if(root==NULL){
         return res;
     }
@@ -61,3 +68,12 @@ vector<vector<int>> levelOrder(TreeNode* root)
     return res;
 }
 
+int main(void)
+{
+    stack<int> s,s1;
+    s.push(1);
+    s1 = s;
+    s.pop();
+    cout<<s1.size();
+    return 0;
+}
