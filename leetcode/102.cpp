@@ -17,51 +17,47 @@ return its level order traversal as:
 ]
 */
 
-/*
+
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <queue>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-vector<vector<int>> levelOrder(TreeNode* root) {
+
+vector<vector<int>> levelOrder(TreeNode* root)
+{
     queue<TreeNode*> q;
-    vector<vector<int>> res;
-    vector<int> elem;
+    TreeNode* flag, *tmpflag, *p;
     q.push(root);
-    TreeNode* p;
-    TreeNode* flag;
-    TreeNode* tmp;
     flag = root;
-    tmp = root;
+    vector<vector<int>> res;
+    if(root==NULL){
+        return res;
+    }
+    vector<int> v1;
     while(!q.empty()){
-        p = q.pop();
-        elem.push_back(p.val);
-        if(p == flag){
-            res.push_back(elem);
-            vector<int> elem;
-            flag = tmp;
+        p = q.front();
+        q.pop();
+        v1.push_back(p->val);
+        if(p->left!=NULL){
+            q.push(p->left);
+            tmpflag = p->left;
         }
-        else{
-            elem.push_back(p.val);
-        }
-        if(NULL != p.left){
-            q.push(p.left);
-            tmp = p.left;
-        }
-        if(NULL != p.right){
-            q.push(p.right);
-            tmp = p.right;
+        if(p->right!=NULL){
+            q.push(p->right);
+            tmpflag = p->right;
         }
         if(p == flag){
-            flag = tmp;
+            vector<int> v2 = v1;
+            res.push_back(v2);
+            v1.clear();
+            flag = tmpflag;
         }
     }
+    return res;
 }
 
-int main(void)
-{
-    return 0;
-}
-*/
