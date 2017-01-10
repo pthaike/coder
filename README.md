@@ -33,10 +33,6 @@ memset(dp, -1, sizeof(dp)) //can init 0 or -1 but not 1
 algorithm
 ```
 
-#max
-```
-algorithm
-```
 
 #queue
 ```
@@ -63,7 +59,16 @@ top()
 
 #vector
 ```
-push_back
-pop_back
+push_back()
+pop_back()
 
+```
+
+#character
+```
+#include <string>
+toupper('t')
+tolower()
+isalnum() //数字或字母
+isdigit() //数字
 ```
