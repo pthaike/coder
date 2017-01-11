@@ -72,3 +72,15 @@ tolower()
 isalnum() //数字或字母
 isdigit() //数字
 ```
+
+#string
+```
+s1.count(s2) //s1包含s2次数
+s1.substr(pos,len) // from pos to pos+len
+```
+
+
+
+```
+strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
+```
