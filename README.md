@@ -84,3 +84,8 @@ s1.substr(pos,len) // from pos to pos+len
 ```
 strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
 ```
+
+#math
+```
+sqrt(4)
+```
