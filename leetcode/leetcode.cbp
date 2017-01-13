@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="1.cpp" />
+		<Unit filename="1.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="102.cpp">
 			<Option compile="0" />
 			<Option link="0" />
@@ -41,8 +44,19 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="126.cpp" />
-		<Unit filename="202.cpp" />
+		<Unit filename="126.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="160.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="174.cpp" />
+		<Unit filename="202.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="33.cpp">
 			<Option link="0" />
 		</Unit>
@@ -55,6 +69,10 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="367.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="389.c">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
@@ -64,7 +82,10 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="472.cpp" />
+		<Unit filename="472.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
