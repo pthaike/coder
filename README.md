@@ -89,3 +89,8 @@ strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
 ```
 sqrt(4)
 ```
+
+#INT_MAX, INT_MIN
+```
+#include<limits.h>
+```
