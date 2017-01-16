@@ -52,12 +52,24 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="174.cpp" />
+		<Unit filename="174.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="202.cpp">
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="206.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="33.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="334.cpp">
+			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
 		<Unit filename="354.c">
@@ -69,7 +81,10 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="36.cpp" />
+		<Unit filename="36.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="367.cpp">
 			<Option compile="0" />
 			<Option link="0" />
@@ -80,6 +95,10 @@
 			<Option link="0" />
 		</Unit>
 		<Unit filename="46.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="461.cpp">
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
