@@ -52,6 +52,7 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="171.cpp" />
 		<Unit filename="174.cpp">
 			<Option compile="0" />
 			<Option link="0" />
@@ -69,6 +70,10 @@
 			<Option link="0" />
 		</Unit>
 		<Unit filename="334.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="337.cpp">
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
@@ -106,6 +111,7 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="60.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
