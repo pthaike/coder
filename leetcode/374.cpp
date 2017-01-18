@@ -16,3 +16,27 @@ n = 10, I pick 6.
 Return 6.
 
 */
+
+// Forward declaration of guess API.
+// @param num, your guess
+// @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
+int guess(int num);
+
+class Solution {
+public:
+    int guessNumber(int n) {
+        int a = 1;
+        int mid = (n-a)/2;
+        int res = guess(mid);
+        while(res!=0)
+        {
+            if(res < 0)
+                n = mid-1;
+            else
+                a = mid+1;
+            mid = (n-a)/2 + a;
+            res = guess(mid);
+        }
+        return mid;
+    }
+};
