@@ -32,31 +32,62 @@ pic1.png
 6 7 2
 1 5 9
 8 3 4
+
+0 0 0
+0 5 9
+0 3 0
 */
 
 #include <cstdio>
 
 using namespace std;
 
+int a[8][9]={
+2,7,6,9,5,1,4,3,8,
+2,9,4,7,5,3,6,1,8,
+4,3,8,9,5,1,2,7,6,
+4,9,2,3,5,7,8,1,6,
+6,1,8,7,5,3,2,9,4,
+6,7,2,1,5,9,8,3,4,
+8,1,6,3,5,7,4,9,2,
+8,3,4,1,5,9,6,7,2};
+
 int main(void)
 {
-    int a[3][3];
-    int num = 0;
-    for(int i = 0; i < 9; i++)
+    int flag[8] = {0};
+    int n;
+    for(int i = 0; i < 9; i ++)
     {
-        scanf("%d",&a[i/3][i%3]);
-        if (a[i/3][i%3] != 0)
-            num ++;
-    }
-    if(a[2][2]>0 && num < )
-
-    for(int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j < 3; j++)
+        scanf("%d", &n);
+        if(n == 0)
+            continue;
+        for(int j = 0; j < 8; j++)
         {
-            if(a[i][j] != 0)
+            if(a[j][i] != n)
+                flag[j] = 1;;
+        }
+    }
+    int num=0,ix;
+    for(int i = 0; i < 9; i ++)
+    {
+        if(flag[i] == 0)
+        {
+            num ++;
+            ix = i;
+        }
+    }
+    if(num > 1)
+        printf("Too Many");
+    else
+    {
+        for(int i = 0; i < 9; i ++)
+        {
+            printf("%d", a[ix][i]);
+            if((i+1)%3==0)
+                printf("\n");
+            else
+                printf(" ");
         }
     }
     return 0;
 }
-
