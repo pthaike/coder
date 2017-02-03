@@ -64,6 +64,47 @@ pop_back()
 
 ```
 
+#map
+```
+bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        map<int, int> m;
+        map<int, int>::iterator it;
+        for(int i = 0; i < nums.size(); i ++)
+        {
+            it = m.find(nums[i]);
+            if(it==m.end())
+            {
+                m.insert(pair<int,int>(nums[i], i));
+            }
+            else
+            {
+                if(i - it->second <= k)
+                    return true;
+                it->second = i;
+            }
+        }
+        return false;
+    }
+```
+
+#set
+```
+bool containsNearbyDuplicate(vector<int>& nums, int k)
+    {
+       unordered_set<int> s;
+       if (k <= 0) return false;
+       if (k >= nums.size()) k = nums.size() - 1;
+       for (int i = 0; i < nums.size(); i++)
+       {
+           if (i > k) s.erase(nums[i - k - 1]);
+           if (s.find(nums[i]) != s.end()) return true;
+           s.insert(nums[i]);
+       }
+       
+       return false;
+```
+
+
 #character
 ```
 #include <string>

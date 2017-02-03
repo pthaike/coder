@@ -32,8 +32,15 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="hiho.cbp" />
-		<Unit filename="hiho103.cpp" />
-		<Unit filename="hiho104.cpp" />
+		<Unit filename="hiho103.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="hiho104.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="offer_1_1.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
