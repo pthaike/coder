@@ -113,6 +113,43 @@ offer()
 pop()
 ```
 
+##priority_queue
+```
+定义方式
+std::priority_queue<T> pq;
+
+struct cmp
+{
+    bool operator()(int &a, int &b) const
+    {
+        //因为优先出列判定为!cmp，所以反向定义实现最小值优先
+        return d[a] > d[b];
+    }
+};
+std::priority_queue<T, std::vector<T>, cmp> pq;
+
+
+long long cost(int k)
+{
+    long long sum = 0;
+    int w = 1;
+    priority_queue<int> pq;
+    int i;
+    for(i = 0; i < k; i++)
+        pq.push(p[i]);
+    while(!pq.empty())
+    {
+        int a = pq.top();
+        pq.pop();
+        sum = sum + w * a;
+        w ++;
+        if(i < n)
+            pq.push(p[i++]);
+    }
+    //printf("%d %d\n",k,sum);
+    return sum;
+}
+```
 
 #stack
 ```
