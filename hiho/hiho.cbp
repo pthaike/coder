@@ -40,7 +40,11 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="offer_1_1.cpp" />
+		<Unit filename="offer_1_1.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="offer_1_2.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

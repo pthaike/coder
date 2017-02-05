@@ -123,7 +123,7 @@ struct cmp
     bool operator()(int &a, int &b) const
     {
         //因为优先出列判定为!cmp，所以反向定义实现最小值优先
-        return d[a] > d[b];
+        return a > b;
     }
 };
 std::priority_queue<T, std::vector<T>, cmp> pq;
