@@ -36,6 +36,7 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="hiho1038.cpp" />
 		<Unit filename="hiho104.cpp">
 			<Option compile="0" />
 			<Option link="0" />
@@ -44,7 +45,14 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
-		<Unit filename="offer_1_2.cpp" />
+		<Unit filename="offer_1_2.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="offer_1_3.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

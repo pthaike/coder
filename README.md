@@ -222,7 +222,7 @@ s1.count(s2) //s1包含s2次数
 s1.substr(pos,len) // from pos to pos+len
 ```
 
-
+#memset(dp, 0, sizeof(dp));
 
 ```
 strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
@@ -237,3 +237,56 @@ sqrt(4)
 ```
 #include<limits.h>
 ```
+
+#01背包
+```
+int dp[501][100001] = {0};
+vector< pair<int, int> > v;
+int ne, val;
+scanf("%d%d", &n, &m);
+v.push_back(pair<int,int>(0, 0));
+for(int i = 0; i < n; i++)
+{
+    scanf("%d%d", &ne, &val);
+    v.push_back(pair<int,int>(ne, val));
+}
+for(int i = 1; i <= n; i++)
+{
+    for(int j = 0; j <= m; j++)
+    {
+        if(j < v[i].first)
+            dp[i][j] = dp[i-1][j];
+        else
+            dp[i][j] = max(dp[i-1][j], dp[i-1][j-v[i].first] + v[i].second);
+    }
+}
+printf("%d\n", dp[n][m]);
+
+
+////memory
+int dp[100001] = {0};
+for(int i = 1; i <= n; i++)
+{
+    for(int j =  m; j >= v[i].first; j--)
+        dp[j] = max(dp[j], dp[j-v[i].first] + v[i].second);
+}
+printf("%d\n", dp[m]);
+
+
+
+打印
+i←N  
+  
+j←V  
+  
+while(i>0 && j>0)  
+  
+    do if(F[i][j]=F[i-1][j-C[i]]+W[i])  
+  
+        then Print W[i]  
+  
+             j←j-C[i]  
+  
+    i←i-1  
+```
+
