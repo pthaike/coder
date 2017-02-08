@@ -290,3 +290,29 @@ while(i>0 && j>0)
     i←i-1  
 ```
 
+#find k-th num
+```
+int findk(vector<int>& nums, int k, int start, int end)
+{
+    int low = start, high = end-1;
+    int mid = start + (end-start)/2;
+    swap(nums[mid],nums[end]);
+    while(low <= high)
+    {
+        while(nums[low] <= nums[end] && low <= high)
+            low ++;
+        while(nums[high] > nums[end] && low <= high)
+            high --;
+        if(low < high)
+            swap(nums[low++], nums[high--]);
+    }
+    swap(nums[low],nums[end]);
+    mid = low - start + 1;
+    if(mid == k)
+        return nums[low];
+    else if(mid > k)
+        return findk(nums, k, start, low - 1);
+    else
+        return findk(nums, k-mid, low + 1, end);
+}
+```
