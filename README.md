@@ -191,6 +191,9 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
 
 #set
 ```
+insert(a)
+erase(a)
+
 bool containsNearbyDuplicate(vector<int>& nums, int k)
     {
        unordered_set<int> s;
