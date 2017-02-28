@@ -217,6 +217,7 @@ toupper('t')
 tolower()
 isalnum() //数字或字母
 isdigit() //数字
+to_string
 ```
 
 #string
