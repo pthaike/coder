@@ -175,6 +175,8 @@ pop_back()
 
 #map
 ```
+m.count(k)
+
 bool containsNearbyDuplicate(vector<int>& nums, int k) {
         map<int, int> m;
         map<int, int>::iterator it;
@@ -231,11 +233,10 @@ to_string
 ```
 s1.count(s2) //s1包含s2次数
 s1.substr(pos,len) // from pos to pos+len
-```
 
-#memset(dp, 0, sizeof(dp));
+memset(dp, 0, sizeof(dp));
 
-```
+
 strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
 ```
 
