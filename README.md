@@ -218,6 +218,19 @@ bool containsNearbyDuplicate(vector<int>& nums, int k)
    return false;
 ```
 
+#Split
+```
+vector<string> split(string str, char delimiter) {
+      vector<string> internal;
+      stringstream ss(str);
+      string tok;
+      while(getline(ss, tok, delimiter)) {
+        internal.push_back(tok);
+      }
+      return internal;
+}
+```
+
 
 #character
 ```
@@ -236,6 +249,7 @@ s1.substr(pos,len) // from pos to pos+len
 
 memset(dp, 0, sizeof(dp));
 
+std::stoi(ls[0]); // string to int
 
 strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
 ```
@@ -381,4 +395,31 @@ public:
         return ret;
     }
 };
+```
+
+
+#qsort
+```
+void quicksort(int* a, int left, int right)
+{
+    if(left >= right) return;
+    int pivot = a[left];
+    int l = left+1, r = right;
+    while(l <= r)
+    {
+        while(l <= r && a[l] <= pivot) l++;
+        while(l <= r && a[r] > pivot) r--;
+        if(l <= r)
+        {
+            int tmp = a[l];
+            a[l] = a[r];
+            a[r] = tmp;
+            l++, r--;
+        }
+    }
+    a[left] = a[r];
+    a[r] = pivot;
+    quicksort(a, left, r-1);
+    quicksort(a, l, right);
+}
 ```
