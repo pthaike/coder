@@ -115,6 +115,10 @@ pop()
 
 ##priority_queue
 ```
+#include <queue>
+top()
+push()
+pop()
 定义方式
 std::priority_queue<T> pq;
 
@@ -128,6 +132,9 @@ struct cmp
 };
 std::priority_queue<T, std::vector<T>, cmp> pq;
 
+priority_queue<pii, vector<pii>, greater<pii>> q;
+
+greater<int>()
 
 long long cost(int k)
 {
@@ -168,6 +175,8 @@ pop_back()
 
 #map
 ```
+m.count(k)
+
 bool containsNearbyDuplicate(vector<int>& nums, int k) {
         map<int, int> m;
         map<int, int>::iterator it;
@@ -217,17 +226,17 @@ toupper('t')
 tolower()
 isalnum() //数字或字母
 isdigit() //数字
+to_string
 ```
 
 #string
 ```
 s1.count(s2) //s1包含s2次数
 s1.substr(pos,len) // from pos to pos+len
-```
 
-#memset(dp, 0, sizeof(dp));
+memset(dp, 0, sizeof(dp));
 
-```
+
 strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
 ```
 
@@ -318,4 +327,58 @@ int findk(vector<int>& nums, int k, int start, int end)
     else
         return findk(nums, k-mid, low + 1, end);
 }
+```
+
+
+# Top K Frequent Elements
+```
+struct cmp
+{
+    bool operator()(const pair<int,int>& a, const pair<int, int>& b)
+    {
+        return a.second > b.second;
+    }
+};
+
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        vector<int> ret;
+        map<int, int> m;
+        map<int,int>::iterator it;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> q;
+        for(int i = 0; i < nums.size(); i ++)
+        {
+            if(m.find(nums[i]) == m.end())
+            {
+                m[nums[i]] = 1;
+            }
+            else
+            {
+                m[nums[i]] ++;
+            }
+        }
+        for(it = m.begin(); it != m.end() && k > 0; it++, k--)
+        {
+            q.push(pair<int, int>(it->first, it->second));
+        }
+        while(it != m.end())
+        {
+            pair<int, int> p = q.top();
+            if(it->second > p.second)
+            {
+                q.pop();
+                q.push(pair<int, int>(it->first, it->second));
+            }
+            it++;
+        }
+        while(!q.empty())
+        {
+            pair<int, int> p = q.top();
+            ret.push_back(p.first);
+            q.pop();
+        }
+        return ret;
+    }
+};
 ```
