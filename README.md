@@ -1,6 +1,6 @@
-#some general util in algorithm
+# some general util in algorithm
 
-#define
+# define
 ```
 #include <set>
 #include <map>
@@ -64,7 +64,7 @@ const double EPS = 1e-8;
 ```
 
 
-#pair
+# pair
 ```
 #include<utility>
 pair<int, int> itv[MAX];
@@ -87,19 +87,19 @@ bool cmp(const pair<int, int> &p1, const pair<int, int> &p2)
 }
 ```
 
-#memset
+# memset
 ```
 #include <memory.h>
 memset(dp, -1, sizeof(dp)) //can init 0 or -1 but not 1 
 ```
 
-#max
+# max
 ```
 algorithm
 ```
 
 
-#queue
+# queue
 ```
 1.back() 返回一个引用，指向最后一个元素
 2.empty() 如果队列空则返回真
@@ -113,7 +113,7 @@ offer()
 pop()
 ```
 
-##priority_queue
+## priority_queue
 ```
 #include <queue>
 top()
@@ -158,7 +158,7 @@ long long cost(int k)
 }
 ```
 
-#stack
+# stack
 ```
 pop()
 push()
@@ -166,14 +166,14 @@ top()
 
 ```
 
-#vector
+# vector
 ```
 push_back()
 pop_back()
 
 ```
 
-#map
+# map
 ```
 m.count(k)
 
@@ -198,7 +198,7 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
     }
 ```
 
-#set
+# set
 ```
 insert(a)
 erase(a)
@@ -218,7 +218,7 @@ bool containsNearbyDuplicate(vector<int>& nums, int k)
    return false;
 ```
 
-#Split
+# Split
 ```
 vector<string> split(string str, char delimiter) {
       vector<string> internal;
@@ -232,7 +232,7 @@ vector<string> split(string str, char delimiter) {
 ```
 
 
-#character
+# character
 ```
 #include <string>
 toupper('t')
@@ -242,7 +242,7 @@ isdigit() //数字
 to_string
 ```
 
-#string
+# string
 ```
 s1.count(s2) //s1包含s2次数
 s1.substr(pos,len) // from pos to pos+len
@@ -254,7 +254,7 @@ std::stoi(ls[0]); // string to int
 strcmp(s1,s2) //0:s1==s2, 正数:s1>s2, 负数:s1 < s2
 ```
 
-#math
+# math
 ```
 sqrt(4)
 ```
@@ -264,7 +264,7 @@ sqrt(4)
 #include<limits.h>
 ```
 
-#01背包
+# 01背包
 ```
 int dp[501][100001] = {0};
 vector< pair<int, int> > v;
@@ -316,7 +316,7 @@ while(i>0 && j>0)
     i←i-1  
 ```
 
-#find k-th num
+# find k-th num
 ```
 int findk(vector<int>& nums, int k, int start, int end)
 {
@@ -398,7 +398,7 @@ public:
 ```
 
 
-#qsort
+# qsort
 ```
 void quicksort(int* a, int left, int right)
 {
